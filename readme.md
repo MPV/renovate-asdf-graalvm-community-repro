@@ -1,6 +1,6 @@
 # renovate-asdf-graalvm-community-repro
 
-Minimal reproduction: Renovate doesn't update GraalVM Community `java` pins (`graalvm-community-<version>`) in asdf's `.tool-versions`.
+Minimal reproduction: Renovate does not update GraalVM Community `java` pins (`graalvm-community-<version>`) in asdf's `.tool-versions`.
 
 ## Current behavior
 
@@ -21,7 +21,7 @@ Renovate skips every case below with `unsupported-datasource`, so these pins nev
 - `25.0.5.0.3` is the newest build at the time of writing. GitHub tags these newer builds `graal-25.<n>.<update>` (e.g. `graal-25.5.5.0.3`), so mapping release tags to versions would stop at `25.0.2`.
 - Every expected version exists in asdf-java's list of installable versions, so `asdf install` works: https://raw.githubusercontent.com/halcyon/asdf-java/master/data/jdk-linux-x86_64-ga.tsv
 - `renovate.json` extends `config:recommended`. These versions are JDK versions, so `workarounds:javaLTSVersions` still applies: `22.0.2` goes straight to the LTS line 25 and skips 23 and 24.
-- `renovate.json` sets `minimumReleaseAge`. The updates carry release timestamps, so they're not left pending.
+- `renovate.json` sets `minimumReleaseAge`. The updates carry release timestamps, so they are not left pending.
 
 ## How to run
 
